@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)https://www.easymapmaker.com/map/c32168834430abb469a78cd046f2a263 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>2026 TTD Pick-up Sites </title>
+    <meta content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" name="viewport">
+    <meta content="yes" name="mobile-web-app-capable">
+    
+    <meta name="description" content="Tree Day Pick-up Site for 95 Tennessee counties">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    
+
+        
+    <link rel="stylesheet" href="./files/styles/pc_map_layout.min.css">
+    <link rel="stylesheet" href="./files/styles/modal.css">
+
+
+    
+    
+    
+        <style>
+            /* The container <div> - needed to position the dropdown content */
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+
+            /* Dropdown Content (Hidden by Default) */
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+
+            /* Links inside the dropdown */
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+            /* Change color of dropdown links on hover */
+            .dropdown-content a:hover {background-color: #f1f1f1}
+
+            /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+            .show {display:block;}
+        </style>
+
+        <style>
+            .marker {
+                display: block;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+            }
+
+            .markerTooltip {
+                position: relative;
+                display: inline-block;
+                z-index: 1;
+            }
+            .markerTooltip .tooltiptext {
+                visibility: hidden;
+
+                background-color: black;
+                color: #fff;
+                font-size: 11px;
+                text-align: center;
+                padding: 5px ;
+                border-radius: 6px;
+                position: absolute;
+                z-index: 1;
+            }
+
+            .markerTooltip:hover { position: relative;      z-index: 1;}
+            .markerTooltip:hover span  {
+                visibility: visible;
+                z-index: 650;
+            }
+
+            .my-custom-control {
+                color: #f00;
+                background: #000;
+                padding: 8px;
+                border-radius: 4px;
+                margin: 8px;
+            }
+
+        </style>
+<!--
+        <script src="https://cdn.maptiler.com/mapbox-gl-js/v1.13.2/mapbox-gl.js"></script>
+    <link href="https://cdn.maptiler.com/mapbox-gl-js/v1.13.2/mapbox-gl.css" rel="stylesheet" />
+-->
+    <link href="./files/styles/maplibre-gl.css" rel="stylesheet">
+
+        <script type="text/javascript" src="./files/scripts/maplibre-gl.js"></script>
+        <style>
+            .mapboxgl-ctrl-scale {
+                margin-top: 0px;
+                line-height: 15px
+            }
+        </style>
+
+
+
+    <!--
+        <script src='//cdn.easymapmaker.com/js/mapbox-sdk.min.js'></script>
+-->
+
+        <script src="./files/scripts/jquery.min.js" type="text/javascript"></script>
+
+
+        <script type="text/javascript">
+            var customLogUrl = "//cdn.easymapmaker.com/img/small_logo2.png";
+            var ajaxMapId = "c32168834430abb469a78cd046f2a263";
+            var mapId = ajaxMapId;
+            var accountType = "free";
+            var paidMap = false;
+            var validUser =  false;
+            var userLoggedIn =  false;
+            var lowResImgUsed =  0;
+            var highResImgUsed =  0;
+                        var CLOUD_FRONT_URL =  '//cdn.easymapmaker.com';
+            var language =  'en';
+
+            var extreme = false;
+
+            
+        </script>
+
+    
+
+
+        <!---->
+        <script src="./files/scripts/main_stadia_control.min.js" type="text/javascript"></script>
+
+    
+
+
+        <script src="./files/scripts/c32168834430abb469a78cd046f2a263" type="text/javascript">
+        </script>
+
+
+        <script src="./files/scripts/iframeInitialStadia.js" type="text/javascript">
+        </script>
+
+
+
+        <script type="text/javascript">
+
+            function checkInitialize(count){
+
+                if ( typeof initialize === 'undefined' && count < 10)   {
+
+                    setTimeout(function () {
+                        checkInitialize(count + 1);
+                    }, 1000);
+                }
+                else if(typeof initialize === 'undefined'){
+                    location.reload(true);
+                }
+                else{
+                    initialize();
+                }
+            }
+
+        </script>
+
+    </head>
+<body onload="checkInitialize(0);" marginwidth="0" marginheight="0">
+
+    <div id="container">
+
+        <!-- start custom alert -->
+        <div id="alertModal" class="modal hide fade in" style="display: none; ">
+            <div class="modal-header">
+                <h4 id="alterTitle"></h4>
+            </div>
+            <div class="modal-body">
+                <p id="alertModalText"></p><p>
+            </p></div>
+            <div class="modal-footer" style="text-align: center;">
+                <a id="closeModalAlert" class="btn btn-info" data-dismiss="modal">Okay</a>
+            </div>
+        </div>
+        <!-- end custom alert -->
+
+
+        <div id="mapHeader" class="mapDefaultFont" style="min-height: 45px;   display: block;">
+            <div id="searchDiv" class="search-query" style="display: block;">
+                <input id="searchBox" class="search-query span2" type="text" placeholder="Search" onkeypress="return handleSearchSubmit(event)"><img id="searchImg" class="search-query" src="./files/images/search.png" onclick="runSearch();" title="Search, Filter, or Find nearest location">
+                <a id="logoUrlId" href="https://www.easymapmaker.com/" target="_blank" style="display: inline;"><img id="searchImgLogo" class="search-query" src="./files/images/small_logo2.png" title="Map made with EasyMapMaker.com" style="display: block;"></a>
+
+            </div>
+
+            <div id="filtersDiv" class="mapFilterFont"></div>
+
+        </div>
+        <div id="mapContainer">
+            <div id="map" class="mapPC column"></div>
+            <div id="left" class="mapDefaultFont column leftDisplay" style="background-color: white; display: none;">
+                <div id="left_header" class="dirHeader">
+                    <a id="dirTabDisplay" style="margin-left: 5px;" class="activeDirHeader">Directions</a>
+                    <a id="nearbyTabDisplay">Nearby</a>
+                    <img id="hideOptions" src="./images/hide_options.png" style="float: right; margin-right: 10px;  cursor: pointer;" alt="hide more options" title="hide options">
+                </div>
+                <div id="leftDirDisplay" class="leftDiv" style="background-color: white;">
+                    <p><label id="dirAddress1_label" for="dirAddress1" class="optionLabel">Start: </label><input id="dirAddress1" type="text" size="20" maxlength="200"></p>
+
+                    <p><label id="dirAddress2_label" for="dirAddress2" class="optionLabel">End: </label> <input id="dirAddress2" type="text" size="20" maxlength="200"></p>
+
+
+                    <p style="text-align: right; margin-right: 50px;"><input id="directionSubmit" value="Get Directions" type="SUBMIT">
+                        <input id="clearDirSubmit" value="Clear" type="SUBMIT"></p>
+
+                    <div id="dirError" style="display: none; "></div>
+
+                    <div id="dirTextDiv" style="padding: 10px; height: 445px; overflow: auto;"></div>
+
+                </div>
+                <div id="leftNearbyDisplay" class="leftDiv" style="display: none;">
+                    <p><label id="nearAddress_label" for="nearAddress" class="optionLabel">Location: </label><input id="nearAddress" type="text" size="20" maxlength="200"></p>
+
+                    <p><label id="nearRadius_label" for="nearRadius" class="optionLabel">Radius: </label><input id="nearRadius" type="text" size="3" maxlength="3" style="text-align: right;" autocomplete="off">
+                        <label class="radio" style=" text-align: left;"><input type="radio" name="distType" value="mi" id="distMi" checked="" autocomplete="off">miles </label>
+                        <label class="radio" style="width: 400px;  text-align: left;"><input type="radio" name="distType" value="km" id="distKM">
+                            km </label></p>
+
+                    <p><label class="checkboxText"><input type="checkbox" name="showCircle" value="false" id="showCircle" class="checkLabel">show circle</label></p>
+
+                    <p id="displayDistance"><label class="checkboxText"><input type="checkbox" name="showDistance" value="false" id="showDistance" class="checkLabel"><span class="checkboxText">show distance</span></label></p>
+
+                    <p style="text-align: right; margin-right: 50px;"><input id="nearbySubmit" value="Find Nearby" type="SUBMIT">
+                        <input id="clearNearbySubmit" value="Clear" type="SUBMIT"></p>
+
+                    <div id="nearbyError" style="display: none; "></div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="groupChecksDiv" class="groupsDivPC mapGroupFont"></div>
+
+                    <div id="descriptionDiv" class="mapDescriptionFont"> Tree Day Pick-up Site for 95 Tennessee counties </div>
+
+        
+        <div id="exportDataOuter" class="outer-div-center">
+            <div id="exportData" class="mapDefaultFont inner-div-center exportDataDiv" style="display: none; ">
+                <div><a id="exportDataDisplay" style="cursor: pointer;" title="Show or hide data on the map to export (copy)">Show Export Data</a>&nbsp;&nbsp;
+                    <a id="exportDataRefresh" style="cursor: pointer; display: none;" title="Refresh with current data on the map.">Refresh</a>
+                    <button id="exportToExcel" class="btn btn-primary" title="Export Data on map to Excel">Export to Excel
+                    </button>
+                </div>
+                <div id="tableText" style="display: none">
+                    <textarea id="sourceData" title="" class="exportDataTextArea"></textarea>
+                </div>
+            </div>
+        </div>
+
+        
+            <div id="mapWindowData" class="mapDefaultFont"></div>
+            <div id="pageData">
+                <div id="compact-pagination"></div>
+            </div>
+        
+
+        <div id="push"></div>
+
+    </div>    <!-- end container-->
+
+    <div id="footer">
+        <div>
+
+            <ul class="footerList">
+                <li class="footerItem"><a href="https://www.easymapmaker.com/">Create a map</a></li>
+            </ul>
+
+
+        </div>
+    </div>
+<form style="display: none" action="https://www.easymapmaker.com/map/c32168834430abb469a78cd046f2a263" method="POST" id="successForm">
+    <input type="hidden" id="forceGoogle" name="forceGoogle" value="true">
+</form>
+
+
+
+
+
+
+</body></html>
