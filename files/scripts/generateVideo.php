@@ -56,8 +56,8 @@ function firstVideo() {
 function plantVideo() {
 	var currVideo = jQuery(
 		'<div class="video-js-holder">'
-			+ '<video id="video-657058244508607060" poster="/uploads/b/119801148-643263997376848073/tree_story_2025_final_570.jpg" class="video-js vjs-big-play-centered" style="display: none;">'
-				+ '<source src="/uploads/b/119801148-643263997376848073/tree_story_2025_final_570.mp4" type="video/mp4" />'
+			+ '<video id="video-657058244508607060" poster="./files/images/tree_story_2025_final_570.jpg" class="video-js vjs-big-play-centered" style="display: none;">'
+				+ '<source src="./files/tree_story_2025_final_570.mp4" type="video/mp4" />'
 			+ '</video>'
 		+ '</div>'
 	);
@@ -72,7 +72,7 @@ function plantVideo() {
 		"autoplay": false,
 		'techOrder': ['html5','flash'],
 		"preload": "none",
-		"poster": "/uploads/b/119801148-643263997376848073/tree_story_2025_final_570.jpg",
+		"poster": "./files/images/tree_story_2025_final_570.jpg",
 		"width": 650,
 		"height": 366
 	}, function(){
@@ -101,7 +101,7 @@ function plantVideo() {
 		}
 		else {
 			currVideo.find('.vjs-poster').css({
-				'background-image': "url('/uploads/b/119801148-643263997376848073/tree_story_2025_final_570.jpg')",
+				'background-image': "url('./files/images/tree_story_2025_final_570.jpg')",
 				'background-repeat': 'no-repeat',
 				'background-position': 'center'
 			});
